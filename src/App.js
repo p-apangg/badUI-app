@@ -38,6 +38,7 @@ function PacManGame({ username, setUsername,inputdone, setInputdone }) {
     [1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 8, 7, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 ]);
+console.log(map);
 const checkMapStatus = useCallback((x, y) => {
   // Ensure special symbols don't disappear
   if (x === 1 && y === 1) return 5;
@@ -119,7 +120,7 @@ const handleKeyDown = (event) => {
   }
   setLastMoveTime(currentTime);
 }
-// if pacman interact with special symbols
+// if pacman interact with special symbols (not villian)
 useEffect(() => {
   // if pacman make letter change (renew/eat)
   if ((pacman.x === 1 && pacman.y === 1) ||(pacman.x === letterLoc.x && pacman.y === letterLoc.y)) {
@@ -141,6 +142,20 @@ useEffect(() => {
       return newMap;
     });
   }
+  // if pacman eat letter
+  if(pacman.x === letterLoc.x && pacman.y === letterLoc.y){
+    setUsername(username + alphabet);
+  }
+  // if pacman eat backspace
+  if(pacman.x === 1 && pacman.y === maxlengthy-2){
+    setUsername(username.slice(0, -1));
+  }
+  // if pacman eat done
+  if(pacman.x === maxlengthx-2 && pacman.y === maxlengthy-2){
+    setInputdone(true);
+  }
+}, [pacman]);
+useEffect(() => {
   // if pacman eat villian
   if(pacman.x === villian.x && pacman.y === villian.y){
     setUsername('');
@@ -159,19 +174,7 @@ useEffect(() => {
       return newMap;
     });
   }
-  // if pacman eat letter
-  if(pacman.x === letterLoc.x && pacman.y === letterLoc.y){
-    setUsername(username + alphabet);
-  }
-  // if pacman eat backspace
-  if(pacman.x === 1 && pacman.y === maxlengthy-2){
-    setUsername(username.slice(0, -1));
-  }
-  // if pacman eat done
-  if(pacman.x === maxlengthx-2 && pacman.y === maxlengthy-2){
-    setInputdone(true);
-  }
-}, [pacman]);
+}, [pacman,villian]);
 // move villian
 const moveVillian = useCallback(() => {
   const directions = [
