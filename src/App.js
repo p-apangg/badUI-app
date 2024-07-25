@@ -187,7 +187,7 @@ const moveVillian = useCallback(() => {
   const validMoves = directions.filter(direction => {
     const newX = villian.x + direction.x;
     const newY = villian.y + direction.y;
-    return newX >= 0 && newX < maxlengthx && newY >= 0 && newY < maxlengthy && map[newX][newY] !== 1;
+    return newX >= 0 && newX < maxlengthx && newY >= 0 && newY < maxlengthy && map[newX][newY] !== 1 && (newX!==4 || newY!==6);
   });
 
   if (validMoves.length > 0) {
@@ -204,7 +204,7 @@ const moveVillian = useCallback(() => {
     });
   }
 
-}, [villian, maxlengthx, maxlengthy, map]);
+}, [villian, map]);
 
 useEffect(() => {
   const interval = setInterval(moveVillian, 200);
