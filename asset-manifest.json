@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/badUI-app/static/css/main.187b565b.css",
+    "main.js": "/badUI-app/static/js/main.aede7c5d.js",
+    "static/js/453.32403a57.chunk.js": "/badUI-app/static/js/453.32403a57.chunk.js",
+    "static/media/pan.png": "/badUI-app/static/media/pan.4ad34182df199292538d.png",
+    "static/media/villian.png": "/badUI-app/static/media/villian.a5fe251e3278f1bd36ca.png",
+    "static/media/button.png": "/badUI-app/static/media/button.ce517a561ba1212d92a4.png",
+    "static/media/delete.png": "/badUI-app/static/media/delete.a1f8f9df8e71c3c6f7a7.png",
+    "static/media/renew.png": "/badUI-app/static/media/renew.3111a7c93dfbb17174f4.png",
+    "static/media/done.png": "/badUI-app/static/media/done.b40da3520f7b59e2ad13.png",
+    "static/media/backspace.png": "/badUI-app/static/media/backspace.ff7ca9a2750a0f4859ac.png",
+    "index.html": "/badUI-app/index.html",
+    "main.187b565b.css.map": "/badUI-app/static/css/main.187b565b.css.map",
+    "main.aede7c5d.js.map": "/badUI-app/static/js/main.aede7c5d.js.map",
+    "453.32403a57.chunk.js.map": "/badUI-app/static/js/453.32403a57.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.187b565b.css",
+    "static/js/main.aede7c5d.js"
+  ]
+}
